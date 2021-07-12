@@ -1,1 +1,31 @@
-<p>directivas-demo works!</p>
+<h4>{{fechaActual | date: 'dd/MM/yy'}}</h4>
+<div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="mostrarAlumnos()">Mostrar Alumnos</button>
+    <button mat-raised-button color="accent" (click)="mostrarCursos()">Mostrar Cursos</button>
+</div>
+<hr />
+
+<div *ngIf="seccionActiva === 0">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Alumnos IDAT</mat-card-title>
+        </mat-card-header>
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let alumno of alumnos">
+                {{ alumno.nombre | uppercase }}                
+            </mat-list-item>
+        </mat-list>          
+    </mat-card>
+</div>
+<div *ngIf="seccionActiva === 1">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Cursos IDAT</mat-card-title>
+        </mat-card-header>
+        <mat-list role="list">
+            <mat-list-item role="listitem" *ngFor="let curso of cursos">
+                {{ curso.nombre }} - {{ curso.precio | currency: 'S/.' }}
+            </mat-list-item>
+        </mat-list>          
+    </mat-card>
+</div>

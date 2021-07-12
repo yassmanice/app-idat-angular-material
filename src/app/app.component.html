@@ -1,1 +1,14 @@
-<app-am-demo></app-am-demo>
+<!-- <app-am-demo></app-am-demo> -->
+<!--<app-flexlayout-demo></app-flexlayout-demo>-->
+<!--<app-directivas-demo></app-directivas-demo>-->
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-button  [routerLink]="['principal']">APP Angular IDAT</button>
+    <span class="example-spacer"></span>
+    <button mat-button [routerLink]="['angulardemo']">Angular Material</button>
+    <button mat-button [routerLink]="['flexlayout']">FlexLayout</button>
+    <button mat-button [routerLink]="['directivas']">Directivas y Pipes</button>
+</mat-toolbar>
+<router-outlet></router-outlet>
